@@ -9,21 +9,31 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.appmania.keyboardtouchpad.view.SlidingTabLayout;
+
 public class MainActivity extends AppCompatActivity {
+
+    private FloatingActionButton switchButton;
+    private int mode = 1;
+
+    private static int MODE_MOUSE = 1;
+    private static int MODE_KEYBOARD = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        switchButton = (FloatingActionButton)findViewById(R.id.btn_mode_switch);
+        switchButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                if(mode == MODE_MOUSE) {
+                    mode = MODE_KEYBOARD;
+                    switchButton.setImageResource(R.drawable.ic_keyboard);
+                }else{
+                    mode = MODE_MOUSE;
+                    switchButton.setImageResource(R.drawable.ic_mouse);
+                }
             }
         });
     }
