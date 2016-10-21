@@ -10,12 +10,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <fragment android:name="com.appmania.keyboardtouchpad.fragment.MouseFragment"
-            android:id="@+id/mouse_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container">
 
     </FrameLayout>
 
