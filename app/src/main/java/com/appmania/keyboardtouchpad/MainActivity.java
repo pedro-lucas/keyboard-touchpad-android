@@ -35,9 +35,9 @@ public class MainActivity extends AppCompatActivity {
         }else{
             mode = savedInstanceState.getInt(BUNDLE_MODE);
             if(mode == MODE_MOUSE) {
-                switchButton.setImageResource(R.drawable.ic_mouse);
-            }else{
                 switchButton.setImageResource(R.drawable.ic_keyboard);
+            }else{
+                switchButton.setImageResource(R.drawable.ic_mouse);
             }
         }
 
@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 Fragment fragment;
                 if(mode == MODE_MOUSE) {
                     mode = MODE_KEYBOARD;
-                    switchButton.setImageResource(R.drawable.ic_keyboard);
+                    switchButton.setImageResource(R.drawable.ic_mouse);
                     fragment = (Fragment)new KeyboardFragment();
                 }else{
                     mode = MODE_MOUSE;
-                    switchButton.setImageResource(R.drawable.ic_mouse);
+                    switchButton.setImageResource(R.drawable.ic_keyboard);
                     fragment = (Fragment)new MouseFragment();
                 }
 
